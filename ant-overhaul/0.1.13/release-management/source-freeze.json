@@ -1,0 +1,31 @@
+{
+  "schema": 1,
+  "state": "frozen",
+  "release": "0.1.13",
+  "settingsPath": "runtime-test/EotU/Binaries/Win64/ue4ss/UE4SS-settings.ini",
+  "settingsSha256": "c17508a7e2b186ddc91847823a040a8d6087dfa7ad89c4e42b21c2c926da4f39",
+  "validationReportPath": "docs/release-validation-0.1.13.md",
+  "validationReportSha256": "a202f9b80243f9a5b15e16b62701286b5f73e5faec890ff102895639c43ed126",
+  "moduleHashes": {
+    "core.lua": "05b474dfd18ba16d6d64aa1b831db1d3eb8a08081f5e200b2ad58e73248ff372",
+    "extra.lua": "7765c3afdfc11529fe2cfd46eeb1bac0f5edc78937e58ec58cc0f9b85d43bb58",
+    "foreign_ui.lua": "549fd2948480160ec545d13dff946ad529af4bdb2d9ddda0f3ca950694f3cef3",
+    "groups.lua": "1234a33e3382b8e5c67057ae3657652b2dbfb1d6fca98f9a2651c20992eb6b3d",
+    "main.lua": "93677920292210e30d4ae83b79bdaab7add987106e06117439c8871703b12dbc",
+    "native.lua": "c4e63834c313d324e5670f97ba1e44113e39e26e0c946e1fa5854039a123b3d8",
+    "roster.lua": "7586784e16891ac3f7974e420fe9545e813a8a794d54348ad3e1447cf8fc6d2e",
+    "roster_catalog.lua": "f892325e554bfb083d428bfee783b6e044796810627e298a049c2e5da05c3c30",
+    "roster_challenge.lua": "6871f8a4bd1bd63363eab0aa24fc167c4add82e10ede6b70f80d95151caea962",
+    "roster_home.lua": "9fc3aaf00ac6e8b0c641a35db16be4e9736157fefd7749156483ec8d3395e55d",
+    "roster_runtime.lua": "4e380cb835ddc1b027df5805003bf46a6c2cc91ea846f51e17e972b7e1342f71",
+    "roster_state.lua": "7d233b9640f4c568b1bcf342bd082278f31c2deded5b8d3dac756a973d85560b",
+    "roster_ui.lua": "b48e1856b6fdfe80232c5711063228e000e470f5ecd1c33bd83c1ecaa8a54189",
+    "sha256.lua": "340c7e86e204b9b0c2e7a2da09e2835acf5cf7f1ecabef01adee68b837785a14",
+    "ui.lua": "994bb1bf254ca756aea986de0511406a0b6c9e697c5c0fb11e4d00ea733b8628"
+  },
+  "runtimeValidationPath": "analysis/story-menu-runtime-validation-0.1.13.json",
+  "runtimeValidationSha256": "35ece54fdf8da553c6f29676ca14202642368e72000d8599fee2d2e68a3c9109",
+  "noBridgeValidationPath": "analysis/story-menu-release-evidence-0.1.13.json",
+  "noBridgeValidationSha256": "8e09ed987c07547f1346e6ffe4f2035d38a01c25245834ba41c8acbf62a02fb3",
+  "frozenAt": "2026-11-01T16:35:43.214606+00:00"
+}

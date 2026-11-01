@@ -1,0 +1,41 @@
+{
+  "compiledSuccessfully": true,
+  "noGameExecuted": true,
+  "noInstallationPerformed": true,
+  "result": {
+    "purpose": "Source review build only; no installation or game execution",
+    "release": "0.1.13",
+    "installerRevision": 3,
+    "inputArchiveSHA256": "db4e3b4709acc94ecfcd5ecfc26127fd27a54fe265ec82217d3c0a816a584a79",
+    "compiledSources": [
+      "AnimatedButton.cs",
+      "BackendClient.cs",
+      "LogWindow.cs",
+      "MainWindow.cs",
+      "Program.cs",
+      "SteamLocator.cs",
+      "AutoPrepare.cs",
+      "SavePatcher.cs"
+    ],
+    "ue4ssRecompiled": false,
+    "gameFilesRequired": false,
+    "byteIdenticalReproductionClaimed": false,
+    "artifacts": [
+      {
+        "sha256": "123ace639d41de272c9a3b21c69cfa3b4143cc0369c120134cb6a7f7f8960a00",
+        "name": "AntOverhaul-0.1.13-Setup.exe",
+        "bytes": 9110528
+      },
+      {
+        "sha256": "0377b877c6a8f4f5375da37187c25b1097611f484ee1db752f811a12d0cdd863",
+        "name": "AutoPrepare.exe",
+        "bytes": 57344
+      },
+      {
+        "sha256": "2f59a1e3876efa802613926e752d041627bcd4b66fb74985e7582a7784a0076c",
+        "name": "AntOverhaul-0.1.13-Manual.zip",
+        "bytes": 8883205
+      }
+    ]
+  }
+}

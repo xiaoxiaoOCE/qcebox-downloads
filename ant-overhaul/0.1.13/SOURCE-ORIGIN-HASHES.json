@@ -1,0 +1,159 @@
+{
+  "release": "0.1.13",
+  "installerRevision": 3,
+  "files": [
+    {
+      "path": "installer/ui/AnimatedButton.cs",
+      "sha256": "367393d8996c8ace481f1191e36dff316a204ce44bc7ffa908e021dc78bf9a8d"
+    },
+    {
+      "path": "installer/ui/BackendClient.cs",
+      "sha256": "18c9122e78f1e14c1aab73862e2d9e6e83aebb49e9806ccb91ef124d49a08bf2"
+    },
+    {
+      "path": "installer/ui/LogWindow.cs",
+      "sha256": "73477b1d8740beb68d4e3fdba9bbd1c55caca678fe7aa6e8a3b05601b19992a1"
+    },
+    {
+      "path": "installer/ui/MainWindow.cs",
+      "sha256": "f1420c282ef8645fa166559f18960af66e6d496f5997e901711f56569f984270"
+    },
+    {
+      "path": "installer/ui/Program.cs",
+      "sha256": "6352c6f1ad26b925f3e930067121eb177d5e3779559b2deccf928a106277d645"
+    },
+    {
+      "path": "installer/ui/SteamLocator.cs",
+      "sha256": "ffa4ecd293ed81c782569b99fb11f7ef6624e979dfc8665634f72ebce8248bbc"
+    },
+    {
+      "path": "installer/backend/Backend.ps1",
+      "sha256": "6c7199a24fa9aa740e9815c0b76b3c5d2a649e73cc8a209fd066e6444ae55a01"
+    },
+    {
+      "path": "installer/ManualManager.ps1",
+      "sha256": "9bcf0130e3ed49dae1407394ce880cdaacd1334377eb0a3368b04185f193f596"
+    },
+    {
+      "path": "installer/app.manifest",
+      "sha256": "951db1e0b7cb3041add014e6e5d91e735536c56bebc6a5ab4f095c6c04274dc0"
+    },
+    {
+      "path": "installer/uninstall/AutoPrepare.cs",
+      "sha256": "83f132636517a738ca08e9f5dea988dad0660e900ca3c0218c17222a384a8d68"
+    },
+    {
+      "path": "installer/uninstall/SavePatcher.cs",
+      "sha256": "b422f5c515629d0d5a3cc3f0993fce14e7c14b7a41ed9e08c6005fdcfa8ef14c"
+    },
+    {
+      "path": "installer/uninstall/health-reference.json",
+      "sha256": "2be5095b390b9c2b0b7c40a0446bbe546605f37f87faa72a313826b8e27d5a92"
+    },
+    {
+      "path": "installer/assets/EotU-Steam-Logo.png",
+      "sha256": "ad5d7e8993476b29aa50d3348810abf407e17f6e3f135303aa6e3e5b09021462"
+    },
+    {
+      "path": "installer/assets/NexusMods-Icon.png",
+      "sha256": "c03d6fd060e08be9855ac8a68f105feb41344d0370d40c28d6ba7e6db1cb21be"
+    },
+    {
+      "path": "installer/assets/NexusMods-Icon.source.json",
+      "sha256": "1fb4beb0ec9afde0736c68d09a0d94dab529c9a0a83a52446282a092ba261bca"
+    },
+    {
+      "path": "mod/AllAttributes/Scripts/core.lua",
+      "sha256": "05b474dfd18ba16d6d64aa1b831db1d3eb8a08081f5e200b2ad58e73248ff372"
+    },
+    {
+      "path": "mod/AllAttributes/Scripts/extra.lua",
+      "sha256": "7765c3afdfc11529fe2cfd46eeb1bac0f5edc78937e58ec58cc0f9b85d43bb58"
+    },
+    {
+      "path": "mod/AllAttributes/Scripts/foreign_ui.lua",
+      "sha256": "549fd2948480160ec545d13dff946ad529af4bdb2d9ddda0f3ca950694f3cef3"
+    },
+    {
+      "path": "mod/AllAttributes/Scripts/groups.lua",
+      "sha256": "1234a33e3382b8e5c67057ae3657652b2dbfb1d6fca98f9a2651c20992eb6b3d"
+    },
+    {
+      "path": "mod/AllAttributes/Scripts/main.lua",
+      "sha256": "93677920292210e30d4ae83b79bdaab7add987106e06117439c8871703b12dbc"
+    },
+    {
+      "path": "mod/AllAttributes/Scripts/native.lua",
+      "sha256": "c4e63834c313d324e5670f97ba1e44113e39e26e0c946e1fa5854039a123b3d8"
+    },
+    {
+      "path": "mod/AllAttributes/Scripts/roster.lua",
+      "sha256": "7586784e16891ac3f7974e420fe9545e813a8a794d54348ad3e1447cf8fc6d2e"
+    },
+    {
+      "path": "mod/AllAttributes/Scripts/roster_catalog.lua",
+      "sha256": "f892325e554bfb083d428bfee783b6e044796810627e298a049c2e5da05c3c30"
+    },
+    {
+      "path": "mod/AllAttributes/Scripts/roster_challenge.lua",
+      "sha256": "6871f8a4bd1bd63363eab0aa24fc167c4add82e10ede6b70f80d95151caea962"
+    },
+    {
+      "path": "mod/AllAttributes/Scripts/roster_home.lua",
+      "sha256": "9fc3aaf00ac6e8b0c641a35db16be4e9736157fefd7749156483ec8d3395e55d"
+    },
+    {
+      "path": "mod/AllAttributes/Scripts/roster_runtime.lua",
+      "sha256": "4e380cb835ddc1b027df5805003bf46a6c2cc91ea846f51e17e972b7e1342f71"
+    },
+    {
+      "path": "mod/AllAttributes/Scripts/roster_state.lua",
+      "sha256": "7d233b9640f4c568b1bcf342bd082278f31c2deded5b8d3dac756a973d85560b"
+    },
+    {
+      "path": "mod/AllAttributes/Scripts/roster_ui.lua",
+      "sha256": "b48e1856b6fdfe80232c5711063228e000e470f5ecd1c33bd83c1ecaa8a54189"
+    },
+    {
+      "path": "mod/AllAttributes/Scripts/sha256.lua",
+      "sha256": "340c7e86e204b9b0c2e7a2da09e2835acf5cf7f1ecabef01adee68b837785a14"
+    },
+    {
+      "path": "mod/AllAttributes/Scripts/ui.lua",
+      "sha256": "994bb1bf254ca756aea986de0511406a0b6c9e697c5c0fb11e4d00ea733b8628"
+    },
+    {
+      "path": "release-management/manifest.json",
+      "sha256": "deb8af25fd9a8b1f2d914ddd32d4b48f413417a65c330bc4c7e62636016c8348"
+    },
+    {
+      "path": "release-management/source-freeze.json",
+      "sha256": "4c3d36a0ba56389819fa9593b9a8fd46e0a6f21a0fa6e71d68bde73761ae72b5"
+    },
+    {
+      "path": "release-management/Manage-Mod.ps1",
+      "sha256": "9faebce1274fa75a37a54b8cd56334db413f855ec483aee5ace9dddedaa889a8"
+    },
+    {
+      "path": "release-management/Update-Mod.ps1",
+      "sha256": "0c96ad45af9df12c90d44302a438e585f3785d5a1b515f5c8331fa34e0688eb6"
+    },
+    {
+      "path": "release-management/update.json",
+      "sha256": "7fff3823af63bdce2dbd47f3dd72e80aca69ce35539775fc916bd26cac68d117"
+    },
+    {
+      "path": "release-docs/ThirdPartyNotices.txt",
+      "sha256": "44fca74d91ad56f0b29706dfa1b1dc29b7c9a7d58cc9ea7d5dbc5b154dc39543"
+    },
+    {
+      "path": "release-docs/README.txt",
+      "sha256": "552330978cd6ad79c8ab8e8c45726b11f9b04bfdfd081e5284f6c219a688dbbc"
+    },
+    {
+      "path": "release-docs/使用说明.txt",
+      "sha256": "cccb1e3d72c81f333c8bc78c59543e98c0a903f2b8da109110a09758a9908178"
+    }
+  ],
+  "provenanceOnlyEdit": "Steam logo source location generalized to omit installation drive; image bytes unchanged."
+}

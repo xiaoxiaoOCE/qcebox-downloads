@@ -1,0 +1,15 @@
+{
+  "originalBytesPreserved": true,
+  "height": 360,
+  "sha256": "ad5d7e8993476b29aa50d3348810abf407e17f6e3f135303aa6e3e5b09021462",
+  "alphaMin": 0,
+  "transparentPixels": 155864,
+  "resourceName": "AntOverhaul.EotUSteamLogo.png",
+  "appId": 463530,
+  "alphaMax": 255,
+  "partialAlphaPixels": 7924,
+  "source": "Steam appcache/librarycache/463530/logo.png (original app 463530 library logo)",
+  "opaquePixels": 66612,
+  "mode": "RGBA",
+  "width": 640
+}

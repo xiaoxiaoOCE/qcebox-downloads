@@ -1,0 +1,1670 @@
+{
+  "schemaVersion": 1,
+  "status": "validated",
+  "gameBuild": {
+    "steamAppId": "463530",
+    "steamBuildId": "26119497",
+    "gameVersion": "1.2.1.1",
+    "executableSha256": "50ba780b0f2f81caa7532f70ad0b22ae3a7b6feccc394203c60709af7e7ba7c9",
+    "executableSize": 91690496,
+    "referenceExePath": "runtime-test/EotU/Binaries/Win64/EotU-Win64-Shipping.exe"
+  },
+  "formula": {
+    "expression": "min(savedHealth, float32(tableHealth * float32(SpawnStatScailing)))",
+    "arithmetic": "IEEE754 binary32; native mulss; no native Health improvement for these exact aliases",
+    "playerColonyOnly": true,
+    "playerOwner": 0,
+    "supportedSaveScope": "formicarium level-data saves; exact owning player must be zero; do not infer mode from arbitrary user filenames",
+    "mustHavePositiveLedgerHealthForMatchingGroup": true,
+    "mustExcludeForeignSubTenant": true,
+    "mustRejectUnlistedClassOrLevel": true,
+    "mustRejectNonFiniteOrNonPositiveScaleOrMaximum": true,
+    "mustNotApplyDefaultRowFallback": true,
+    "retainedHealthBuffs": "This formula requires zero retained ColonyBuffs of BuffType=0 for the same CreatureName. Otherwise preserve their native ordered float32 additions before scaling or reject.",
+    "newGamePlus": "GetCreatureStats global map after row lookup alters FoodValue only; no NG+ HP multiplier for owned player units in this function.",
+    "medicalSpawnScaling": "AColonyCreature applies SpawnStatScailing to FullHealth with mulss; 1 skips and 0.6 uses the same multiplication. Mod native.refresh_creature repeats this native scale after LookupApplyStatsForLevel.",
+    "subTenantFlags": "The three reviewed stats functions do not read bIsSubTennent. Ordinary medical subtenants use saved SpawnStatScailing. The separate foreign-subtenant restore chain is outside this proof and affected foreign targets must be rejected.",
+    "nativeAddresses": {
+      "GetCreatureStats": "0x141414750",
+      "LookupApplyStatsForLevel": "0x14141be80",
+      "ApplyColonyBuffs": "0x141403750",
+      "ColonyCreatureScale": "0x141404080"
+    }
+  },
+  "groups": [
+    {
+      "id": "WoodAntMelee",
+      "aliases": [
+        "WoodAntMelee"
+      ],
+      "nativeHealth": true,
+      "nativeHealthField": "WoodAntMeleeHealthImprovment",
+      "nativeStats": [
+        "Health",
+        "PhysicalResistance",
+        "VenomResistance",
+        "AreaOfEffectResistance"
+      ],
+      "supplemental": false,
+      "inheritedGroup": null
+    },
+    {
+      "id": "LeafcutterMedia",
+      "aliases": [
+        "LeafcutterMedia"
+      ],
+      "nativeHealth": true,
+      "nativeHealthField": "LeafcutterMediaHealthImprovment",
+      "nativeStats": [
+        "AttackDamage",
+        "Piercing",
+        "Armour",
+        "Health"
+      ],
+      "supplemental": false,
+      "inheritedGroup": null
+    },
+    {
+      "id": "MatabeleSoldier",
+      "aliases": [
+        "MatabeleSoldier"
+      ],
+      "nativeHealth": true,
+      "nativeHealthField": "MatabeleSoldierHealthImprovment",
+      "nativeStats": [
+        "AttackDamage",
+        "AttackSpeed",
+        "MovementSpeed",
+        "Health"
+      ],
+      "supplemental": false,
+      "inheritedGroup": null
+    },
+    {
+      "id": "TermiteSoldier",
+      "aliases": [
+        "TermiteSoldier"
+      ],
+      "nativeHealth": true,
+      "nativeHealthField": "TermiteMinorSoldierHealthImprovment",
+      "nativeStats": [
+        "AttackDamage",
+        "Piercing",
+        "PhysicalResistance",
+        "Health"
+      ],
+      "supplemental": false,
+      "inheritedGroup": null
+    },
+    {
+      "id": "TermiteMajorSoldier",
+      "aliases": [
+        "TermiteMajorSoldier"
+      ],
+      "nativeHealth": false,
+      "nativeHealthField": null,
+      "nativeStats": [
+        "MovementSpeed",
+        "AttackDamage",
+        "PhysicalResistance",
+        "VenomResistance"
+      ],
+      "supplemental": false,
+      "inheritedGroup": null
+    },
+    {
+      "id": "ExplodingAntMajorSoldier",
+      "aliases": [
+        "ExplodingAntMajorSoldier"
+      ],
+      "nativeHealth": true,
+      "nativeHealthField": "ExplodingAntMajorSoldierHealthImprovment",
+      "nativeStats": [
+        "AttackSpeed",
+        "Health",
+        "PhysicalResistance",
+        "MovementSpeed"
+      ],
+      "supplemental": false,
+      "inheritedGroup": null
+    },
+    {
+      "id": "ExplodingTermiteSoldier",
+      "aliases": [
+        "ExplodingTermiteSoldier"
+      ],
+      "nativeHealth": false,
+      "nativeHealthField": null,
+      "nativeStats": [
+        "AttackDamage",
+        "PhysicalResistance",
+        "VenomResistance",
+        "MovementSpeed"
+      ],
+      "supplemental": false,
+      "inheritedGroup": null
+    },
+    {
+      "id": "NarrowHeadedAntSoldier",
+      "aliases": [
+        "NarrowHeadedAntSoldier"
+      ],
+      "nativeHealth": true,
+      "nativeHealthField": "NarrowHeadedSoldierHealthImprovment",
+      "nativeStats": [
+        "AttackDamage",
+        "Piercing",
+        "PhysicalResistance",
+        "Health"
+      ],
+      "supplemental": false,
+      "inheritedGroup": null
+    },
+    {
+      "id": "Worker",
+      "aliases": [
+        "WorkerAnt",
+        "FireAntWorker",
+        "MatabeleWorker",
+        "LeafcutterMinor",
+        "TermiteWorker",
+        "TermiteMajorWorker",
+        "BigHeadedMinor",
+        "ExplodingAntWorker"
+      ],
+      "nativeHealth": false,
+      "nativeHealthField": null,
+      "nativeStats": [
+        "MovementSpeed",
+        "ResourceHarvest"
+      ],
+      "supplemental": false,
+      "inheritedGroup": null
+    },
+    {
+      "id": "Queen",
+      "aliases": [
+        "Queen",
+        "FireAntQueen",
+        "LeafcutterQueen",
+        "LittleBlackAntQueen",
+        "MatabeleQueen",
+        "TermiteQueen",
+        "ExplodingTermiteQueen",
+        "ExplodingAntQueen"
+      ],
+      "nativeHealth": true,
+      "nativeHealthField": "QueenHealthImprovment",
+      "nativeStats": [
+        "Health",
+        "Cooldown"
+      ],
+      "supplemental": false,
+      "inheritedGroup": null
+    },
+    {
+      "id": "BlackAnt",
+      "aliases": [
+        "BlackAnt"
+      ],
+      "nativeHealth": true,
+      "nativeHealthField": "BlackAntHealthImprovment",
+      "nativeStats": [
+        "AttackDamage",
+        "Piercing",
+        "Armour",
+        "Health"
+      ],
+      "supplemental": false,
+      "inheritedGroup": null
+    },
+    {
+      "id": "WoodAnt",
+      "aliases": [
+        "WoodAntA",
+        "WoodAntB"
+      ],
+      "nativeHealth": true,
+      "nativeHealthField": "WoodAntHealthImprovment",
+      "nativeStats": [
+        "AttackDamage",
+        "AttackSpeed",
+        "Range",
+        "Health"
+      ],
+      "supplemental": false,
+      "inheritedGroup": null
+    },
+    {
+      "id": "Leafcutter",
+      "aliases": [
+        "LeafcutterMajorTaunt",
+        "LeafcutterMajorStun"
+      ],
+      "nativeHealth": true,
+      "nativeHealthField": "LeafcutterHealthImprovment",
+      "nativeStats": [
+        "Health",
+        "PhysicalResistance",
+        "VenomResistance",
+        "AttackSpeed"
+      ],
+      "supplemental": false,
+      "inheritedGroup": null
+    },
+    {
+      "id": "FireAnt",
+      "aliases": [
+        "FireAntPervasive",
+        "FireAntVigorous"
+      ],
+      "nativeHealth": false,
+      "nativeHealthField": null,
+      "nativeStats": [
+        "MovementSpeed",
+        "AreaOfEffectResistance",
+        "AttackDamage",
+        "Piercing"
+      ],
+      "supplemental": false,
+      "inheritedGroup": null
+    },
+    {
+      "id": "Matabele",
+      "aliases": [
+        "MatabeleMedicAnesthetist",
+        "MatabeleMedicFastResponder"
+      ],
+      "nativeHealth": false,
+      "nativeHealthField": null,
+      "nativeStats": [
+        "MovementSpeed",
+        "AttackDamage",
+        "PhysicalResistance",
+        "VenomResistance"
+      ],
+      "supplemental": false,
+      "inheritedGroup": null
+    },
+    {
+      "id": "BulletAnt",
+      "aliases": [
+        "BulletAnt"
+      ],
+      "nativeHealth": true,
+      "nativeHealthField": "BulletAntHealthImprovment",
+      "nativeStats": [
+        "Piercing",
+        "AttackDamage",
+        "Health",
+        "MaxDamageTaken"
+      ],
+      "supplemental": false,
+      "inheritedGroup": null
+    },
+    {
+      "id": "ExplodingAnt",
+      "aliases": [
+        "ExplodingAntSoldier"
+      ],
+      "nativeHealth": false,
+      "nativeHealthField": null,
+      "nativeStats": [
+        "AttackDamage",
+        "Piercing",
+        "VenomResistance",
+        "MaxDamageTaken"
+      ],
+      "supplemental": false,
+      "inheritedGroup": null
+    },
+    {
+      "id": "ExplodingTermite",
+      "aliases": [
+        "ExplodingTermiteWorker"
+      ],
+      "nativeHealth": true,
+      "nativeHealthField": "ExplodingTermiteWorkerHealthImprovment",
+      "nativeStats": [
+        "Health",
+        "Armour",
+        "OutOfCombatEvasion",
+        "MovementSpeed"
+      ],
+      "supplemental": false,
+      "inheritedGroup": null
+    },
+    {
+      "id": "NarrowHeaded",
+      "aliases": [
+        "NarrowHeadedAntRanged"
+      ],
+      "nativeHealth": true,
+      "nativeHealthField": "NarrowHeadedRangedHealthImprovment",
+      "nativeStats": [
+        "AttackDamage",
+        "MovementSpeed",
+        "Health",
+        "VenomResistance"
+      ],
+      "supplemental": false,
+      "inheritedGroup": null
+    },
+    {
+      "id": "LeafcutterSuperMajor",
+      "aliases": [
+        "LeafcutterSuperMajor"
+      ],
+      "nativeHealth": false,
+      "nativeHealthField": null,
+      "nativeStats": [],
+      "supplemental": true,
+      "inheritedGroup": null
+    },
+    {
+      "id": "SlaveMaker",
+      "aliases": [
+        "SlaveMakerAnt"
+      ],
+      "nativeHealth": false,
+      "nativeHealthField": null,
+      "nativeStats": [],
+      "supplemental": true,
+      "inheritedGroup": null
+    },
+    {
+      "id": "TrapjawAnt",
+      "aliases": [
+        "TrapjawAnt"
+      ],
+      "nativeHealth": false,
+      "nativeHealthField": null,
+      "nativeStats": [],
+      "supplemental": true,
+      "inheritedGroup": null
+    },
+    {
+      "id": "ArmyAnt",
+      "aliases": [
+        "ArmyAnt"
+      ],
+      "nativeHealth": false,
+      "nativeHealthField": null,
+      "nativeStats": [],
+      "supplemental": true,
+      "inheritedGroup": null
+    },
+    {
+      "id": "ArmyAntMajor",
+      "aliases": [
+        "ArmyAntMajor"
+      ],
+      "nativeHealth": false,
+      "nativeHealthField": null,
+      "nativeStats": [],
+      "supplemental": true,
+      "inheritedGroup": null
+    },
+    {
+      "id": "BigHeadedMajor",
+      "aliases": [
+        "BigHeadedMajor"
+      ],
+      "nativeHealth": false,
+      "nativeHealthField": null,
+      "nativeStats": [],
+      "supplemental": true,
+      "inheritedGroup": null
+    },
+    {
+      "id": "BigHeadedSuperSoldier",
+      "aliases": [
+        "BigHeadedSuperSoldier"
+      ],
+      "nativeHealth": false,
+      "nativeHealthField": null,
+      "nativeStats": [],
+      "supplemental": true,
+      "inheritedGroup": null
+    },
+    {
+      "id": "LittleBlackAnt",
+      "aliases": [
+        "LittleBlackAnt"
+      ],
+      "nativeHealth": false,
+      "nativeHealthField": null,
+      "nativeStats": [],
+      "supplemental": true,
+      "inheritedGroup": null
+    },
+    {
+      "id": "TermiteMajorWorker",
+      "aliases": [
+        "TermiteMajorWorker"
+      ],
+      "nativeHealth": false,
+      "nativeHealthField": null,
+      "nativeStats": [],
+      "supplemental": true,
+      "inheritedGroup": "Worker"
+    },
+    {
+      "id": "DriverAntWorker",
+      "aliases": [
+        "DriverAntWorker"
+      ],
+      "nativeHealth": false,
+      "nativeHealthField": null,
+      "nativeStats": [],
+      "supplemental": true,
+      "inheritedGroup": null
+    },
+    {
+      "id": "DriverAntSoldier",
+      "aliases": [
+        "DriverAntSoldier"
+      ],
+      "nativeHealth": false,
+      "nativeHealthField": null,
+      "nativeStats": [],
+      "supplemental": true,
+      "inheritedGroup": null
+    },
+    {
+      "id": "DriverAntLargeSoldier",
+      "aliases": [
+        "DriverAntLargeSoldier"
+      ],
+      "nativeHealth": false,
+      "nativeHealthField": null,
+      "nativeStats": [],
+      "supplemental": true,
+      "inheritedGroup": null
+    },
+    {
+      "id": "StinkAnt",
+      "aliases": [
+        "StinkAnt"
+      ],
+      "nativeHealth": false,
+      "nativeHealthField": null,
+      "nativeStats": [],
+      "supplemental": true,
+      "inheritedGroup": null
+    }
+  ],
+  "classes": [
+    {
+      "classPath": "/Game/Blueprints/Creatures/BigHeadedAnt/BigHeadedMajor.BigHeadedMajor_C",
+      "creatureName": "BigHeadedMajor",
+      "evidence": [
+        {
+          "path": "analysis/story-roster-final-native-hatches.tsv",
+          "kind": "observed_native_hatch",
+          "line": 12
+        }
+      ],
+      "groupIds": [
+        "BigHeadedMajor"
+      ],
+      "healthByLevel": {
+        "1": 25.0,
+        "2": 40.0,
+        "3": 55.0
+      }
+    },
+    {
+      "classPath": "/Game/Blueprints/Creatures/BigHeadedAnt/BigHeadedMinor.BigHeadedMinor_C",
+      "creatureName": "BigHeadedMinor",
+      "evidence": [
+        {
+          "path": "analysis/fresh-0.1.3-live-trace.jsonl",
+          "kind": "observed_runtime_actor",
+          "line": 28
+        }
+      ],
+      "groupIds": [
+        "Worker"
+      ],
+      "healthByLevel": {
+        "1": 25.0,
+        "2": 35.0,
+        "3": 40.0
+      }
+    },
+    {
+      "classPath": "/Game/Blueprints/Creatures/BigHeadedAnt/BigHeadedSuperSoldier.BigHeadedSuperSoldier_C",
+      "creatureName": "BigHeadedSuperSoldier",
+      "evidence": [
+        {
+          "path": "analysis/story-roster-final-native-hatches.tsv",
+          "kind": "observed_native_hatch",
+          "line": 13
+        }
+      ],
+      "groupIds": [
+        "BigHeadedSuperSoldier"
+      ],
+      "healthByLevel": {
+        "1": 90.0,
+        "2": 130.0,
+        "3": 170.0
+      }
+    },
+    {
+      "classPath": "/Game/Blueprints/Creatures/BlackAnt/BlackAntWorker.BlackAntWorker_C",
+      "creatureName": "WorkerAnt",
+      "evidence": [
+        {
+          "path": "installer-src/uninstall/evidence/base/BlackAntWorker.json",
+          "kind": "native_asset_cdo",
+          "object": "Default__BlackAntWorker_C",
+          "property": "CreatureName"
+        }
+      ],
+      "groupIds": [
+        "Worker"
+      ],
+      "healthByLevel": {
+        "1": 25.0,
+        "2": 35.0,
+        "3": 45.0
+      }
+    },
+    {
+      "classPath": "/Game/Blueprints/Creatures/FireAnt/FireAntPervasive.FireAntPervasive_C",
+      "creatureName": "FireAntPervasive",
+      "evidence": [
+        {
+          "path": "analysis/fresh-0.1.3-live-trace.jsonl",
+          "kind": "observed_runtime_actor",
+          "line": 28
+        }
+      ],
+      "groupIds": [
+        "FireAnt"
+      ],
+      "healthByLevel": {
+        "1": 30.0,
+        "2": 45.0,
+        "3": 50.0
+      }
+    },
+    {
+      "classPath": "/Game/Blueprints/Creatures/FireAnt/FireAntVigorous.FireAntVigorous_C",
+      "creatureName": "FireAntVigorous",
+      "evidence": [
+        {
+          "path": "analysis/fresh-0.1.3-live-trace.jsonl",
+          "kind": "observed_runtime_actor",
+          "line": 28
+        }
+      ],
+      "groupIds": [
+        "FireAnt"
+      ],
+      "healthByLevel": {
+        "1": 30.0,
+        "2": 45.0,
+        "3": 50.0
+      }
+    },
+    {
+      "classPath": "/Game/Blueprints/Creatures/FireAnt/FireAntWorker.FireAntWorker_C",
+      "creatureName": "FireAntWorker",
+      "evidence": [
+        {
+          "path": "analysis/fresh-0.1.3-live-trace.jsonl",
+          "kind": "observed_runtime_actor",
+          "line": 28
+        }
+      ],
+      "groupIds": [
+        "Worker"
+      ],
+      "healthByLevel": {
+        "1": 15.0,
+        "2": 25.0,
+        "3": 35.0
+      }
+    },
+    {
+      "classPath": "/Game/Blueprints/Creatures/GeneThief/FormicaEreptorWorker.FormicaEreptorWorker_C",
+      "creatureName": "WorkerAnt",
+      "evidence": [
+        {
+          "path": "analysis/fresh-0.1.3-live-trace.jsonl",
+          "kind": "observed_runtime_actor",
+          "line": 28
+        }
+      ],
+      "groupIds": [
+        "Worker"
+      ],
+      "healthByLevel": {
+        "1": 25.0,
+        "2": 35.0,
+        "3": 45.0
+      }
+    },
+    {
+      "classPath": "/Game/Blueprints/Creatures/Leafcutter/LeafcutterMinor.LeafcutterMinor_C",
+      "creatureName": "LeafcutterMinor",
+      "evidence": [
+        {
+          "path": "analysis/fresh-0.1.3-live-trace.jsonl",
+          "kind": "observed_runtime_actor",
+          "line": 28
+        }
+      ],
+      "groupIds": [
+        "Worker"
+      ],
+      "healthByLevel": {
+        "1": 25.0,
+        "2": 35.0,
+        "3": 45.0
+      }
+    },
+    {
+      "classPath": "/Game/Blueprints/Creatures/Leafcutter/LeafcutterSuperMajor.LeafcutterSuperMajor_C",
+      "creatureName": "LeafcutterSuperMajor",
+      "evidence": [
+        {
+          "path": "analysis/story-roster-final-native-hatches.tsv",
+          "kind": "observed_native_hatch",
+          "line": 6
+        }
+      ],
+      "groupIds": [
+        "LeafcutterSuperMajor"
+      ],
+      "healthByLevel": {
+        "1": 3200.0
+      }
+    },
+    {
+      "classPath": "/Game/Blueprints/Creatures/LittleBlackAnt/LittleBlackAnt.LittleBlackAnt_C",
+      "creatureName": "LittleBlackAnt",
+      "evidence": [
+        {
+          "path": "analysis/story-roster-final-native-hatches.tsv",
+          "kind": "observed_native_hatch",
+          "line": 14
+        }
+      ],
+      "groupIds": [
+        "LittleBlackAnt"
+      ],
+      "healthByLevel": {
+        "1": 25.0,
+        "2": 30.0,
+        "3": 40.0
+      }
+    },
+    {
+      "classPath": "/Game/Blueprints/Creatures/LittleBlackAnt/LittleBlackAntWorker.LittleBlackAntWorker_C",
+      "creatureName": "WorkerAnt",
+      "evidence": [
+        {
+          "path": "installer-src/uninstall/evidence/base/LittleBlackAntWorker.json",
+          "kind": "native_asset_cdo",
+          "object": "Default__LittleBlackAntWorker_C",
+          "property": "CreatureName"
+        }
+      ],
+      "groupIds": [
+        "Worker"
+      ],
+      "healthByLevel": {
+        "1": 25.0,
+        "2": 35.0,
+        "3": 45.0
+      }
+    },
+    {
+      "classPath": "/Game/Blueprints/Creatures/MatabeleAnt/MatabeleMedicAnesthetist.MatabeleMedicAnesthetist_C",
+      "creatureName": "MatabeleMedicAnesthetist",
+      "evidence": [
+        {
+          "path": "analysis/fresh-0.1.3-live-trace.jsonl",
+          "kind": "observed_runtime_actor",
+          "line": 28
+        }
+      ],
+      "groupIds": [
+        "Matabele"
+      ],
+      "healthByLevel": {
+        "1": 90.0,
+        "2": 105.0,
+        "3": 120.0
+      }
+    },
+    {
+      "classPath": "/Game/Blueprints/Creatures/MatabeleAnt/MatabeleMedicFastResponder.MatabeleMedicFastResponder_C",
+      "creatureName": "MatabeleMedicFastResponder",
+      "evidence": [
+        {
+          "path": "analysis/fresh-0.1.3-live-trace.jsonl",
+          "kind": "observed_runtime_actor",
+          "line": 28
+        }
+      ],
+      "groupIds": [
+        "Matabele"
+      ],
+      "healthByLevel": {
+        "1": 90.0,
+        "2": 105.0,
+        "3": 120.0
+      }
+    },
+    {
+      "classPath": "/Game/Blueprints/Creatures/MatabeleAnt/MatabeleWorker.MatabeleWorker_C",
+      "creatureName": "MatabeleWorker",
+      "evidence": [
+        {
+          "path": "analysis/fresh-0.1.3-live-trace.jsonl",
+          "kind": "observed_runtime_actor",
+          "line": 28
+        }
+      ],
+      "groupIds": [
+        "Worker"
+      ],
+      "healthByLevel": {
+        "1": 25.0,
+        "2": 35.0,
+        "3": 45.0
+      }
+    },
+    {
+      "classPath": "/Game/Blueprints/Creatures/OtherColonyCreatures/ArmyAnt.ArmyAnt_C",
+      "creatureName": "ArmyAnt",
+      "evidence": [
+        {
+          "path": "installer-src/uninstall/evidence/base/ArmyAnt.json",
+          "kind": "native_asset_cdo",
+          "object": "Default__ArmyAnt_C",
+          "property": "CreatureName"
+        }
+      ],
+      "groupIds": [
+        "ArmyAnt"
+      ],
+      "healthByLevel": {
+        "1": 30.0,
+        "2": 40.0,
+        "3": 55.0
+      }
+    },
+    {
+      "classPath": "/Game/Blueprints/Creatures/OtherColonyCreatures/ArmyAntMajor.ArmyAntMajor_C",
+      "creatureName": "ArmyAntMajor",
+      "evidence": [
+        {
+          "path": "analysis/story-roster-final-native-hatches.tsv",
+          "kind": "observed_native_hatch",
+          "line": 10
+        }
+      ],
+      "groupIds": [
+        "ArmyAntMajor"
+      ],
+      "healthByLevel": {
+        "1": 90.0,
+        "2": 105.0,
+        "3": 130.0
+      }
+    },
+    {
+      "classPath": "/Game/Blueprints/Creatures/OtherColonyCreatures/ArmyAntMedia.ArmyAntMedia_C",
+      "creatureName": "ArmyAnt",
+      "evidence": [
+        {
+          "path": "analysis/story-roster-final-native-hatches.tsv",
+          "kind": "observed_native_hatch",
+          "line": 9
+        }
+      ],
+      "groupIds": [
+        "ArmyAnt"
+      ],
+      "healthByLevel": {
+        "1": 30.0,
+        "2": 40.0,
+        "3": 55.0
+      }
+    },
+    {
+      "classPath": "/Game/Blueprints/Creatures/OtherColonyCreatures/SlaveMaker.SlaveMaker_C",
+      "creatureName": "SlaveMakerAnt",
+      "evidence": [
+        {
+          "path": "analysis/story-roster-final-native-hatches.tsv",
+          "kind": "observed_native_hatch",
+          "line": 7
+        }
+      ],
+      "groupIds": [
+        "SlaveMaker"
+      ],
+      "healthByLevel": {
+        "1": 50.0,
+        "2": 80.0,
+        "3": 120.0
+      }
+    },
+    {
+      "classPath": "/Game/Blueprints/Creatures/OtherColonyCreatures/TrapjawAnt.TrapjawAnt_C",
+      "creatureName": "TrapjawAnt",
+      "evidence": [
+        {
+          "path": "analysis/story-roster-final-native-hatches.tsv",
+          "kind": "observed_native_hatch",
+          "line": 8
+        }
+      ],
+      "groupIds": [
+        "TrapjawAnt"
+      ],
+      "healthByLevel": {
+        "1": 65.0,
+        "2": 75.0,
+        "3": 90.0
+      }
+    },
+    {
+      "classPath": "/Game/Blueprints/Creatures/OtherColonyCreaturesAfrica/DriverAntLargeSoldier.DriverAntLargeSoldier_C",
+      "creatureName": "DriverAntLargeSoldier",
+      "evidence": [
+        {
+          "path": "analysis/story-roster-final-native-hatches.tsv",
+          "kind": "observed_native_hatch",
+          "line": 22
+        }
+      ],
+      "groupIds": [
+        "DriverAntLargeSoldier"
+      ],
+      "healthByLevel": {
+        "1": 140.0,
+        "2": 180.0,
+        "3": 240.0
+      }
+    },
+    {
+      "classPath": "/Game/Blueprints/Creatures/OtherColonyCreaturesAfrica/DriverAntSoldier.DriverAntSoldier_C",
+      "creatureName": "DriverAntSoldier",
+      "evidence": [
+        {
+          "path": "analysis/story-roster-final-native-hatches.tsv",
+          "kind": "observed_native_hatch",
+          "line": 21
+        }
+      ],
+      "groupIds": [
+        "DriverAntSoldier"
+      ],
+      "healthByLevel": {
+        "1": 85.0,
+        "2": 100.0,
+        "3": 130.0
+      }
+    },
+    {
+      "classPath": "/Game/Blueprints/Creatures/OtherColonyCreaturesAfrica/DriverAntWorker.DriverAntWorker_C",
+      "creatureName": "DriverAntWorker",
+      "evidence": [
+        {
+          "path": "analysis/story-roster-final-native-hatches.tsv",
+          "kind": "observed_native_hatch",
+          "line": 20
+        }
+      ],
+      "groupIds": [
+        "DriverAntWorker"
+      ],
+      "healthByLevel": {
+        "1": 20.0,
+        "2": 30.0,
+        "3": 40.0
+      }
+    },
+    {
+      "classPath": "/Game/Blueprints/Creatures/OtherColonyCreaturesAfrica/StinkAnt.StinkAnt_C",
+      "creatureName": "StinkAnt",
+      "evidence": [
+        {
+          "path": "analysis/story-roster-final-native-hatches.tsv",
+          "kind": "observed_native_hatch",
+          "line": 24
+        }
+      ],
+      "groupIds": [
+        "StinkAnt"
+      ],
+      "healthByLevel": {
+        "1": 350.0,
+        "2": 450.0,
+        "3": 500.0
+      }
+    },
+    {
+      "classPath": "/Game/Blueprints/Creatures/Termites/TermiteMajorSoldier.TermiteMajorSoldier_C",
+      "creatureName": "TermiteMajorSoldier",
+      "evidence": [
+        {
+          "path": "analysis/fresh-0.1.3-live-trace.jsonl",
+          "kind": "observed_runtime_actor",
+          "line": 28
+        }
+      ],
+      "groupIds": [
+        "TermiteMajorSoldier"
+      ],
+      "healthByLevel": {
+        "1": 140.0,
+        "2": 160.0,
+        "3": 190.0
+      }
+    },
+    {
+      "classPath": "/Game/Blueprints/Creatures/Termites/TermiteMajorWorker.TermiteMajorWorker_C",
+      "creatureName": "TermiteMajorWorker",
+      "evidence": [
+        {
+          "path": "analysis/fresh-0.1.3-live-trace.jsonl",
+          "kind": "observed_runtime_actor",
+          "line": 28
+        }
+      ],
+      "groupIds": [
+        "Worker",
+        "TermiteMajorWorker"
+      ],
+      "healthByLevel": {
+        "1": 40.0,
+        "2": 55.0,
+        "3": 70.0
+      }
+    },
+    {
+      "classPath": "/Game/Blueprints/Creatures/Termites/TermiteWorker.TermiteWorker_C",
+      "creatureName": "TermiteWorker",
+      "evidence": [
+        {
+          "path": "analysis/fresh-0.1.3-live-trace.jsonl",
+          "kind": "observed_runtime_actor",
+          "line": 28
+        }
+      ],
+      "groupIds": [
+        "Worker"
+      ],
+      "healthByLevel": {
+        "1": 30.0,
+        "2": 45.0,
+        "3": 60.0
+      }
+    },
+    {
+      "classPath": "/Game/Blueprints/Creatures/TrapJaw/TrapJawWorker.TrapJawWorker_C",
+      "creatureName": "WorkerAnt",
+      "evidence": [
+        {
+          "path": "installer-src/uninstall/evidence/base/TrapJawWorker.json",
+          "kind": "native_asset_cdo",
+          "object": "Default__TrapJawWorker_C",
+          "property": "CreatureName"
+        }
+      ],
+      "groupIds": [
+        "Worker"
+      ],
+      "healthByLevel": {
+        "1": 25.0,
+        "2": 35.0,
+        "3": 45.0
+      }
+    },
+    {
+      "classPath": "/Game/Blueprints/Creatures/WoodAnt/WoodAntWorker.WoodAntWorker_C",
+      "creatureName": "WorkerAnt",
+      "evidence": [
+        {
+          "path": "installer-src/uninstall/evidence/base/WoodAntWorker.json",
+          "kind": "native_asset_cdo",
+          "object": "Default__WoodAntWorker_C",
+          "property": "CreatureName"
+        }
+      ],
+      "groupIds": [
+        "Worker"
+      ],
+      "healthByLevel": {
+        "1": 25.0,
+        "2": 35.0,
+        "3": 45.0
+      }
+    },
+    {
+      "classPath": "/Game/DLC/ExplodingAnts_DLC/Blueprints/ExplodingAnts/ExplodingAntSoldier.ExplodingAntSoldier_C",
+      "creatureName": "ExplodingAntSoldier",
+      "evidence": [
+        {
+          "path": "analysis/exploding-012-home-hatched.json",
+          "kind": "observed_native_hatch"
+        }
+      ],
+      "groupIds": [
+        "ExplodingAnt"
+      ],
+      "healthByLevel": {
+        "1": 45.0,
+        "2": 56.0,
+        "3": 67.0
+      }
+    },
+    {
+      "classPath": "/Game/DLC/ExplodingAnts_DLC/Blueprints/ExplodingAnts/ExplodingAntWorker.ExplodingAntWorker_C",
+      "creatureName": "ExplodingAntWorker",
+      "evidence": [
+        {
+          "path": "installer-src/uninstall/evidence/ExplodingAntWorker.json",
+          "kind": "native_asset_cdo",
+          "object": "Default__ExplodingAntWorker_C",
+          "property": "CreatureName"
+        }
+      ],
+      "groupIds": [
+        "Worker"
+      ],
+      "healthByLevel": {
+        "1": 25.0,
+        "2": 35.0,
+        "3": 45.0
+      }
+    },
+    {
+      "classPath": "/Game/DLC/ExplodingAnts_DLC/Blueprints/ExplodingTermites/ExplodingTermiteSoldier.ExplodingTermiteSoldier_C",
+      "creatureName": "ExplodingTermiteSoldier",
+      "evidence": [
+        {
+          "path": "analysis/exploding-012-home-hatched.json",
+          "kind": "observed_native_hatch"
+        }
+      ],
+      "groupIds": [
+        "ExplodingTermiteSoldier"
+      ],
+      "healthByLevel": {
+        "1": 95.0,
+        "2": 110.0,
+        "3": 125.0
+      }
+    }
+  ],
+  "unaffectedClasses": [
+    {
+      "classPath": "/Game/Blueprints/Creatures/BlackAnt/BlackAnt.BlackAnt_C",
+      "creatureName": "BlackAnt",
+      "evidence": [
+        {
+          "path": "analysis/fresh-0.1.3-live-trace.jsonl",
+          "kind": "observed_runtime_actor",
+          "line": 28
+        }
+      ],
+      "groupIds": [
+        "BlackAnt"
+      ],
+      "nativeHealth": true,
+      "reason": "native_health_improvement_excludes_extra_Health"
+    },
+    {
+      "classPath": "/Game/Blueprints/Creatures/BulletAnt/BulletAnt.BulletAnt_C",
+      "creatureName": "BulletAnt",
+      "evidence": [
+        {
+          "path": "analysis/fresh-0.1.3-live-trace.jsonl",
+          "kind": "observed_runtime_actor",
+          "line": 28
+        }
+      ],
+      "groupIds": [
+        "BulletAnt"
+      ],
+      "nativeHealth": true,
+      "reason": "native_health_improvement_excludes_extra_Health"
+    },
+    {
+      "classPath": "/Game/Blueprints/Creatures/FireAnt/FireAntColonyQueen.FireAntColonyQueen_C",
+      "creatureName": "FireAntQueen",
+      "evidence": [
+        {
+          "path": "analysis/fresh-0.1.3-live-trace.jsonl",
+          "kind": "observed_runtime_actor",
+          "line": 30
+        }
+      ],
+      "groupIds": [
+        "Queen"
+      ],
+      "nativeHealth": true,
+      "reason": "native_health_improvement_excludes_extra_Health"
+    },
+    {
+      "classPath": "/Game/Blueprints/Creatures/Forest/Woodlouse.Woodlouse_C",
+      "creatureName": "Woodlouse",
+      "evidence": [
+        {
+          "path": "analysis/fresh-0.1.3-live-trace.jsonl",
+          "kind": "observed_runtime_actor",
+          "line": 3573
+        }
+      ],
+      "groupIds": [],
+      "nativeHealth": false,
+      "reason": "not_an_extra_Health_alias_in_groups"
+    },
+    {
+      "classPath": "/Game/Blueprints/Creatures/GeneThief/GeneThiefQueen.GeneThiefQueen_C",
+      "creatureName": "Queen",
+      "evidence": [
+        {
+          "path": "analysis/fresh-0.1.3-live-trace.jsonl",
+          "kind": "observed_runtime_actor",
+          "line": 28
+        }
+      ],
+      "groupIds": [
+        "Queen"
+      ],
+      "nativeHealth": true,
+      "reason": "native_health_improvement_excludes_extra_Health"
+    },
+    {
+      "classPath": "/Game/Blueprints/Creatures/Leafcutter/LeafcutterColonyQueen.LeafcutterColonyQueen_C",
+      "creatureName": "LeafcutterQueen",
+      "evidence": [
+        {
+          "path": "analysis/fresh-0.1.3-live-trace.jsonl",
+          "kind": "observed_runtime_actor",
+          "line": 428
+        }
+      ],
+      "groupIds": [
+        "Queen"
+      ],
+      "nativeHealth": true,
+      "reason": "native_health_improvement_excludes_extra_Health"
+    },
+    {
+      "classPath": "/Game/Blueprints/Creatures/Leafcutter/LeafcutterMajorStun.LeafcutterMajorStun_C",
+      "creatureName": "LeafcutterMajorStun",
+      "evidence": [
+        {
+          "path": "analysis/fresh-0.1.3-live-trace.jsonl",
+          "kind": "observed_runtime_actor",
+          "line": 28
+        }
+      ],
+      "groupIds": [
+        "Leafcutter"
+      ],
+      "nativeHealth": true,
+      "reason": "native_health_improvement_excludes_extra_Health"
+    },
+    {
+      "classPath": "/Game/Blueprints/Creatures/Leafcutter/LeafcutterMajorTaunt.LeafcutterMajorTaunt_C",
+      "creatureName": "LeafcutterMajorTaunt",
+      "evidence": [
+        {
+          "path": "analysis/fresh-0.1.3-live-trace.jsonl",
+          "kind": "observed_runtime_actor",
+          "line": 28
+        }
+      ],
+      "groupIds": [
+        "Leafcutter"
+      ],
+      "nativeHealth": true,
+      "reason": "native_health_improvement_excludes_extra_Health"
+    },
+    {
+      "classPath": "/Game/Blueprints/Creatures/Leafcutter/LeafcutterMedia.LeafcutterMedia_C",
+      "creatureName": "LeafcutterMedia",
+      "evidence": [
+        {
+          "path": "analysis/fresh-0.1.3-live-trace.jsonl",
+          "kind": "observed_runtime_actor",
+          "line": 28
+        }
+      ],
+      "groupIds": [
+        "LeafcutterMedia"
+      ],
+      "nativeHealth": true,
+      "reason": "native_health_improvement_excludes_extra_Health"
+    },
+    {
+      "classPath": "/Game/Blueprints/Creatures/LittleBlackAnt/LittleBlackAntColonyQueen.LittleBlackAntColonyQueen_C",
+      "creatureName": "LittleBlackAntQueen",
+      "evidence": [
+        {
+          "path": "analysis/fresh-0.1.3-live-trace.jsonl",
+          "kind": "observed_runtime_actor",
+          "line": 30
+        }
+      ],
+      "groupIds": [
+        "Queen"
+      ],
+      "nativeHealth": true,
+      "reason": "native_health_improvement_excludes_extra_Health"
+    },
+    {
+      "classPath": "/Game/Blueprints/Creatures/MatabeleAnt/MatabeleColonyQueen.MatabeleColonyQueen_C",
+      "creatureName": "MatabeleQueen",
+      "evidence": [
+        {
+          "path": "analysis/fresh-0.1.3-live-trace.jsonl",
+          "kind": "observed_runtime_actor",
+          "line": 30
+        }
+      ],
+      "groupIds": [
+        "Queen"
+      ],
+      "nativeHealth": true,
+      "reason": "native_health_improvement_excludes_extra_Health"
+    },
+    {
+      "classPath": "/Game/Blueprints/Creatures/MatabeleAnt/MatabeleSoldier.MatabeleSoldier_C",
+      "creatureName": "MatabeleSoldier",
+      "evidence": [
+        {
+          "path": "analysis/fresh-0.1.3-live-trace.jsonl",
+          "kind": "observed_runtime_actor",
+          "line": 28
+        }
+      ],
+      "groupIds": [
+        "MatabeleSoldier"
+      ],
+      "nativeHealth": true,
+      "reason": "native_health_improvement_excludes_extra_Health"
+    },
+    {
+      "classPath": "/Game/Blueprints/Creatures/Termites/TermiteColonyQueen.TermiteColonyQueen_C",
+      "creatureName": "TermiteQueen",
+      "evidence": [
+        {
+          "path": "analysis/fresh-0.1.3-live-trace.jsonl",
+          "kind": "observed_runtime_actor",
+          "line": 30
+        }
+      ],
+      "groupIds": [
+        "Queen"
+      ],
+      "nativeHealth": true,
+      "reason": "native_health_improvement_excludes_extra_Health"
+    },
+    {
+      "classPath": "/Game/Blueprints/Creatures/Termites/TermiteSoldier.TermiteSoldier_C",
+      "creatureName": "TermiteSoldier",
+      "evidence": [
+        {
+          "path": "analysis/fresh-0.1.3-live-trace.jsonl",
+          "kind": "observed_runtime_actor",
+          "line": 28
+        }
+      ],
+      "groupIds": [
+        "TermiteSoldier"
+      ],
+      "nativeHealth": true,
+      "reason": "native_health_improvement_excludes_extra_Health"
+    },
+    {
+      "classPath": "/Game/Blueprints/Creatures/Uber/UberHermitCrab.UberHermitCrab_C",
+      "creatureName": "UberHermitCrab",
+      "evidence": [
+        {
+          "path": "analysis/fresh-0.1.3-live-trace.jsonl",
+          "kind": "observed_runtime_actor",
+          "line": 3576
+        }
+      ],
+      "groupIds": [],
+      "nativeHealth": false,
+      "reason": "not_an_extra_Health_alias_in_groups"
+    },
+    {
+      "classPath": "/Game/Blueprints/Creatures/WoodAnt/WoodAntASlow.WoodAntASlow_C",
+      "creatureName": "WoodAntA",
+      "evidence": [
+        {
+          "path": "analysis/fresh-0.1.3-live-trace.jsonl",
+          "kind": "observed_runtime_actor",
+          "line": 28
+        }
+      ],
+      "groupIds": [
+        "WoodAnt"
+      ],
+      "nativeHealth": true,
+      "reason": "native_health_improvement_excludes_extra_Health"
+    },
+    {
+      "classPath": "/Game/Blueprints/Creatures/WoodAnt/WoodAntBSlow.WoodAntBSlow_C",
+      "creatureName": "WoodAntB",
+      "evidence": [
+        {
+          "path": "analysis/fresh-0.1.3-live-trace.jsonl",
+          "kind": "observed_runtime_actor",
+          "line": 28
+        }
+      ],
+      "groupIds": [
+        "WoodAnt"
+      ],
+      "nativeHealth": true,
+      "reason": "native_health_improvement_excludes_extra_Health"
+    },
+    {
+      "classPath": "/Game/Blueprints/Creatures/WoodAnt/WoodAntSoldier.WoodAntSoldier_C",
+      "creatureName": "WoodAntMelee",
+      "evidence": [
+        {
+          "path": "analysis/fresh-0.1.3-live-trace.jsonl",
+          "kind": "observed_runtime_actor",
+          "line": 28
+        }
+      ],
+      "groupIds": [
+        "WoodAntMelee"
+      ],
+      "nativeHealth": true,
+      "reason": "native_health_improvement_excludes_extra_Health"
+    },
+    {
+      "classPath": "/Game/DLC/ExplodingAnts_DLC/Blueprints/ExplodingAnts/ExplodingAntMajorSoldier.ExplodingAntMajorSoldier_C",
+      "creatureName": "ExplodingAntMajorSoldier",
+      "evidence": [
+        {
+          "path": "analysis/exploding-012-home-hatched.json",
+          "kind": "observed_native_hatch"
+        }
+      ],
+      "groupIds": [
+        "ExplodingAntMajorSoldier"
+      ],
+      "nativeHealth": true,
+      "reason": "native_health_improvement_excludes_extra_Health"
+    },
+    {
+      "classPath": "/Game/DLC/ExplodingAnts_DLC/Blueprints/ExplodingTermites/ExplodingTermiteWorker.ExplodingTermiteWorker_C",
+      "creatureName": "ExplodingTermiteWorker",
+      "evidence": [
+        {
+          "path": "analysis/exploding-012-home-hatched.json",
+          "kind": "observed_native_hatch"
+        }
+      ],
+      "groupIds": [
+        "ExplodingTermite"
+      ],
+      "nativeHealth": true,
+      "reason": "native_health_improvement_excludes_extra_Health"
+    }
+  ],
+  "unsupportedNames": [],
+  "runtimeValidation": {
+    "path": "analysis/offline-uninstall/native-cap-oracle.json",
+    "sha256": "a9f2960d36e3b71faa690de5a5f1ed0ed699d3b25b45ebec016c8d121f9cde4e",
+    "caseCount": 98,
+    "classCount": 17,
+    "coveredClasses": [
+      "/Game/Blueprints/Creatures/BigHeadedAnt/BigHeadedMajor.BigHeadedMajor_C",
+      "/Game/Blueprints/Creatures/BigHeadedAnt/BigHeadedSuperSoldier.BigHeadedSuperSoldier_C",
+      "/Game/Blueprints/Creatures/FireAnt/FireAntVigorous.FireAntVigorous_C",
+      "/Game/Blueprints/Creatures/GeneThief/FormicaEreptorWorker.FormicaEreptorWorker_C",
+      "/Game/Blueprints/Creatures/Leafcutter/LeafcutterSuperMajor.LeafcutterSuperMajor_C",
+      "/Game/Blueprints/Creatures/LittleBlackAnt/LittleBlackAnt.LittleBlackAnt_C",
+      "/Game/Blueprints/Creatures/OtherColonyCreatures/ArmyAnt.ArmyAnt_C",
+      "/Game/Blueprints/Creatures/OtherColonyCreatures/ArmyAntMajor.ArmyAntMajor_C",
+      "/Game/Blueprints/Creatures/OtherColonyCreatures/SlaveMaker.SlaveMaker_C",
+      "/Game/Blueprints/Creatures/OtherColonyCreatures/TrapjawAnt.TrapjawAnt_C",
+      "/Game/Blueprints/Creatures/OtherColonyCreaturesAfrica/DriverAntLargeSoldier.DriverAntLargeSoldier_C",
+      "/Game/Blueprints/Creatures/OtherColonyCreaturesAfrica/DriverAntSoldier.DriverAntSoldier_C",
+      "/Game/Blueprints/Creatures/OtherColonyCreaturesAfrica/DriverAntWorker.DriverAntWorker_C",
+      "/Game/Blueprints/Creatures/OtherColonyCreaturesAfrica/StinkAnt.StinkAnt_C",
+      "/Game/Blueprints/Creatures/Termites/TermiteMajorWorker.TermiteMajorWorker_C",
+      "/Game/DLC/ExplodingAnts_DLC/Blueprints/ExplodingAnts/ExplodingAntSoldier.ExplodingAntSoldier_C",
+      "/Game/DLC/ExplodingAnts_DLC/Blueprints/ExplodingTermites/ExplodingTermiteSoldier.ExplodingTermiteSoldier_C"
+    ],
+    "notRuntimeTestedClasses": [
+      "/Game/Blueprints/Creatures/BigHeadedAnt/BigHeadedMinor.BigHeadedMinor_C",
+      "/Game/Blueprints/Creatures/BlackAnt/BlackAntWorker.BlackAntWorker_C",
+      "/Game/Blueprints/Creatures/FireAnt/FireAntPervasive.FireAntPervasive_C",
+      "/Game/Blueprints/Creatures/FireAnt/FireAntWorker.FireAntWorker_C",
+      "/Game/Blueprints/Creatures/Leafcutter/LeafcutterMinor.LeafcutterMinor_C",
+      "/Game/Blueprints/Creatures/LittleBlackAnt/LittleBlackAntWorker.LittleBlackAntWorker_C",
+      "/Game/Blueprints/Creatures/MatabeleAnt/MatabeleMedicAnesthetist.MatabeleMedicAnesthetist_C",
+      "/Game/Blueprints/Creatures/MatabeleAnt/MatabeleMedicFastResponder.MatabeleMedicFastResponder_C",
+      "/Game/Blueprints/Creatures/MatabeleAnt/MatabeleWorker.MatabeleWorker_C",
+      "/Game/Blueprints/Creatures/OtherColonyCreatures/ArmyAntMedia.ArmyAntMedia_C",
+      "/Game/Blueprints/Creatures/Termites/TermiteMajorSoldier.TermiteMajorSoldier_C",
+      "/Game/Blueprints/Creatures/Termites/TermiteWorker.TermiteWorker_C",
+      "/Game/Blueprints/Creatures/TrapJaw/TrapJawWorker.TrapJawWorker_C",
+      "/Game/Blueprints/Creatures/WoodAnt/WoodAntWorker.WoodAntWorker_C",
+      "/Game/DLC/ExplodingAnts_DLC/Blueprints/ExplodingAnts/ExplodingAntWorker.ExplodingAntWorker_C"
+    ],
+    "allReferenceClassesRuntimeTested": false,
+    "levels": "All table-supported levels 1..3 for each covered class; LeafcutterSuperMajor only 1",
+    "scaleFloat32Bits": [
+      1065353216,
+      1058642330
+    ],
+    "arithmeticComparison": "Exact IEEE754 binary32 bit equality, 0 mismatches",
+    "remainingClassEvidence": "Native CDO or previous real actor class/name mapping, exact native table rows, and the same reviewed native stat functions; not claimed as runtime oracle coverage"
+  },
+  "sources": [
+    {
+      "path": "mod-source/AllAttributes/Scripts/groups.lua",
+      "sha256": "1234a33e3382b8e5c67057ae3657652b2dbfb1d6fca98f9a2651c20992eb6b3d",
+      "size": 17226
+    },
+    {
+      "path": "analysis/fresh-0.1.3-live-trace.jsonl",
+      "sha256": "62fa6ac11f673adc7acb93c131d3aa47caba99cb830110d98e310a419498d9a8",
+      "size": 76581363
+    },
+    {
+      "path": "analysis/story-roster-final-native-hatches.tsv",
+      "sha256": "1b168109d638a2b75159973fa8e41aab1f24fa71e1fa509fe99e8c1e9df7d215",
+      "size": 3483
+    },
+    {
+      "path": "analysis/exploding-012-home-hatched.json",
+      "sha256": "0b177961a5f2f30945d64d8e4708d7da218d5c9ccb47b627831f01486e027c0e",
+      "size": 4980
+    },
+    {
+      "path": "installer-src/uninstall/evidence/ExplodingAntWorker.json",
+      "sha256": "434591a75ea6716f2438edf3b336de306fbb998182cc3047d586859a40e2126c",
+      "size": 158490
+    },
+    {
+      "path": "installer-src/uninstall/evidence/base/ArmyAnt.json",
+      "sha256": "64f65816510395133ecfe4a580808caa940c840bb050d8678423e6a030d3e3c6",
+      "size": 201326
+    },
+    {
+      "path": "installer-src/uninstall/evidence/base/assets/EotU/Content/Blueprints/Creatures/OtherColonyCreatures/ArmyAnt.uasset",
+      "sha256": "9ba323bb19eb8aae8abf1e359d44a784b0287142d4055c4ce0c1241b5c42cfc3",
+      "size": 9530
+    },
+    {
+      "path": "installer-src/uninstall/evidence/base/assets/EotU/Content/Blueprints/Creatures/OtherColonyCreatures/ArmyAnt.uexp",
+      "sha256": "ee27355ff26d983688ef697a74fedc90ed787ff3a0d9be05916bbba4034e297b",
+      "size": 7290
+    },
+    {
+      "path": "installer-src/uninstall/evidence/base/BlackAntWorker.json",
+      "sha256": "32db79b330b29cee45ea3f04e3878670d2cde26d2280eee28a189d04ea9a5cd1",
+      "size": 208654
+    },
+    {
+      "path": "installer-src/uninstall/evidence/base/assets/EotU/Content/Blueprints/Creatures/BlackAnt/BlackAntWorker.uasset",
+      "sha256": "093cd2c3813ae3a06824ad4d7bb2c91db3344e8eda2d25801dcf9bfe19e8b9a5",
+      "size": 10167
+    },
+    {
+      "path": "installer-src/uninstall/evidence/base/assets/EotU/Content/Blueprints/Creatures/BlackAnt/BlackAntWorker.uexp",
+      "sha256": "09916cf9ba23da066d4cccdce64132731999bab4d0676c8e42d065f0e988c694",
+      "size": 7832
+    },
+    {
+      "path": "installer-src/uninstall/evidence/base/WoodAntWorker.json",
+      "sha256": "d8e23b852f03a7854831a96c40ace2fa45fe14e6e893901b77d20b4f60e48dc3",
+      "size": 211574
+    },
+    {
+      "path": "installer-src/uninstall/evidence/base/assets/EotU/Content/Blueprints/Creatures/WoodAnt/WoodAntWorker.uasset",
+      "sha256": "750a1f2c26981b18987c813289f7c2203d55649ea30efb0c9c9f3668333001c4",
+      "size": 9903
+    },
+    {
+      "path": "installer-src/uninstall/evidence/base/assets/EotU/Content/Blueprints/Creatures/WoodAnt/WoodAntWorker.uexp",
+      "sha256": "6a880fe17cb9c0d091734edab387c3e867111c221026e82cd3b7da03f5d51374",
+      "size": 7937
+    },
+    {
+      "path": "installer-src/uninstall/evidence/base/LittleBlackAntWorker.json",
+      "sha256": "76c07a245e537465fad4c31b844e53eeb8fa25067faa07674a17935d4f3ce9e5",
+      "size": 156718
+    },
+    {
+      "path": "installer-src/uninstall/evidence/base/assets/EotU/Content/Blueprints/Creatures/LittleBlackAnt/LittleBlackAntWorker.uasset",
+      "sha256": "0a431c0cce9eb3e52b116a6f6705d9e8acb3f35f9ec8645e07ef7e912871bc94",
+      "size": 9495
+    },
+    {
+      "path": "installer-src/uninstall/evidence/base/assets/EotU/Content/Blueprints/Creatures/LittleBlackAnt/LittleBlackAntWorker.uexp",
+      "sha256": "b1367890ca444d71bc961d605b3862bd660342338504cecd77c0b1b606576eb8",
+      "size": 5640
+    },
+    {
+      "path": "installer-src/uninstall/evidence/base/TrapJawWorker.json",
+      "sha256": "8abde38f65ee08ded22a3f502b707c2dc4350f1d5eec2f2e7774ec0cabfa4607",
+      "size": 157255
+    },
+    {
+      "path": "installer-src/uninstall/evidence/base/assets/EotU/Content/Blueprints/Creatures/TrapJaw/TrapJawWorker.uasset",
+      "sha256": "ce4ed63cd2d6ad72e736da4856c6e142ee0ee0bd3e8f58294d4197c71b9cae91",
+      "size": 9586
+    },
+    {
+      "path": "installer-src/uninstall/evidence/base/assets/EotU/Content/Blueprints/Creatures/TrapJaw/TrapJawWorker.uexp",
+      "sha256": "7562088d83c704b188446931dd1d8a282fa2d783f121679e231365b5eaa0556a",
+      "size": 5640
+    },
+    {
+      "path": "analysis/fresh-qa-0.1.3-CreatureStats.json",
+      "sha256": "17fc039dda480456a60c499afbb4e0932f96d398f9e6f74a4ccec89e5e6c587a",
+      "size": 4570682
+    },
+    {
+      "path": "analysis/fresh-qa-0.1.3-CreatureStats_Freeplay.json",
+      "sha256": "5fc1961720717da140e707880a1278f666df21ddd0910d3f940dd81f24e1f8a6",
+      "size": 4570721
+    },
+    {
+      "path": "analysis/LookupApplyStatsForLevel-native.asm.annotated.txt",
+      "sha256": "ad02be638c8262c54c37b9fd91f0a9c8542e298ac8a5f7a7bdd7c909cd5b67fc",
+      "size": 80318
+    },
+    {
+      "path": "analysis/ApplyColonyBuffs-native.asm.txt",
+      "sha256": "816eeab62b3927b856391d11bb170a22ff39601439acc918c8564e5e0d77b3af",
+      "size": 6378
+    },
+    {
+      "path": "analysis/review-GetCreatureStats-cap-lookup.asm.annotated.txt",
+      "sha256": "1374359164612ac861f69cb84bd592490d42d9ee1585bac557e4e08d64dbb39c",
+      "size": 18516
+    },
+    {
+      "path": "analysis/review-medical-ColonyCreature-begin.asm.txt",
+      "sha256": "264f68672cb6c0aad65b4e6b958cffd7fb78b130c55f3b5a8e5aae14cfc31ad9",
+      "size": 3512
+    },
+    {
+      "path": "analysis/review-candidate11-medical-scaling.md",
+      "sha256": "3e7271ff23cd84db04acbaf771bb0214eeb309c6b3a1763ea6570aba5faa4bcb",
+      "size": 7903
+    },
+    {
+      "path": "mod-source/AllAttributes/Scripts/native.lua",
+      "sha256": "c4e63834c313d324e5670f97ba1e44113e39e26e0c946e1fa5854039a123b3d8",
+      "size": 16727
+    },
+    {
+      "path": "runtime-test/EotU/Binaries/Win64/ue4ss/CXXHeaderDump/EotU.hpp",
+      "sha256": "9bbfb2e4c4d026f7d30dbac8e5686676cf81c953ea45ea858970b84995a469bc",
+      "size": 717314
+    },
+    {
+      "path": "installer-src/uninstall/evidence/pak-metadata.json",
+      "sha256": "8296e92bb3319a7df2d584a7b51949242e56879a66eee280c44dcbd4fbd43163",
+      "size": 658
+    },
+    {
+      "path": "installer-src/uninstall/evidence/assets/Blueprints/ExplodingAnts/ExplodingAntWorker.uasset",
+      "sha256": "d0fdd824fefc30036e6621586734b6f2ac8b62d8f0025c3cf40a2de2f7618555",
+      "size": 9889
+    },
+    {
+      "path": "installer-src/uninstall/evidence/assets/Blueprints/ExplodingAnts/ExplodingAntWorker.uexp",
+      "sha256": "3e6e8c200dcedb050e10353225823ce6e044a5ec3ff1ddb579093c7911fa8f61",
+      "size": 5691
+    },
+    {
+      "path": "runtime-test/EotU/Binaries/Win64/EotU-Win64-Shipping.exe",
+      "sha256": "50ba780b0f2f81caa7532f70ad0b22ae3a7b6feccc394203c60709af7e7ba7c9",
+      "size": 91690496
+    },
+    {
+      "path": "analysis/offline-uninstall/native-cap-oracle.json",
+      "sha256": "a9f2960d36e3b71faa690de5a5f1ed0ed699d3b25b45ebec016c8d121f9cde4e",
+      "size": 150228
+    }
+  ],
+  "acceptanceBoundaries": [
+    "Runtime oracle coverage is exactly the recorded runtimeValidation scope; this file does not claim the installer transaction or all 32 classes have passed runtime validation.",
+    "No class is inferred from a class short name. Unknown owned living classes must be rejected when extra Health might apply.",
+    "No static cap is supplied for groups with native Health improvements: leave their existing Health untouched.",
+    "LeafcutterSuperMajor has only a level-1 native row. Missing levels are deliberately unsupported.",
+    "The original health bytes of wounded or dead units must never be increased. Only over-cap Health is clamped.",
+    "Scope is native owned colony creatures in supported story/formicarium saves, not arbitrary custom maps or other stat-changing mods."
+  ],
+  "missingForeignDefault": false,
+  "missingForeignDefaultEvidence": {
+    "path": "analysis/offline-uninstall/native-cap-oracle.json",
+    "sha256": "a9f2960d36e3b71faa690de5a5f1ed0ed699d3b25b45ebec016c8d121f9cde4e",
+    "slot": "Colony1LevelData",
+    "sourceSaveSha256": "4c18f15cf9c9a5586ae564575048e10e3d34bfc27de67f59a29567c7bc569282",
+    "serializedMissingCount": 370,
+    "identityMatches": 370,
+    "nativeFalseCount": 370,
+    "nativeTrueCount": 0,
+    "schema": "FCreatureSaveState.bForeignSubTennent bool at native struct offset 0x4D; absent serialized property resolves false via LoadGameCompressed on Steam build 26119497",
+    "scope": "supported parser schema on Steam build 26119497; explicit true remains unsupported"
+  }
+}
