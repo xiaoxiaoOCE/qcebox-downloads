@@ -1,0 +1,298 @@
+{
+  "schema": 1,
+  "release": "0.1.18",
+  "manual": {
+    "name": "AntOverhaul-0.1.18-Manual.zip",
+    "sha256": "e313a31861f1750793e60b58f860a4db6a5970508dbd21368d1723e090eb5a99",
+    "bytes": 9261633
+  },
+  "publishedInstaller": {
+    "name": "AntOverhaul-0.1.18-Setup.exe",
+    "sha256": "616deed0f27db00fa9d5c2c1884177a88e0a81ff41dce27893796080280720db",
+    "bytes": 9489408
+  },
+  "payloadManifestSha256": "e2f005e4cbf3544a772accf8631cc3c5e1c6f878a5a708171686b2ebb1013f24",
+  "managedFiles": 36,
+  "luaFiles": 31,
+  "gameBuild": "26412732",
+  "files": [
+    {
+      "path": "BUILD-README.txt",
+      "length": 4774,
+      "sha256": "959cfa193b90964d9092843d25847f43ea69d97347ebb57619a51d0b67e2b4ff"
+    },
+    {
+      "path": "Build-Review.ps1",
+      "length": 8498,
+      "sha256": "20e3a23689b2bfb2c3cb19972d4fe68a3afdce211da85d95b4580d39a1522a16"
+    },
+    {
+      "path": "installer-source/app.manifest",
+      "length": 1033,
+      "sha256": "951db1e0b7cb3041add014e6e5d91e735536c56bebc6a5ab4f095c6c04274dc0"
+    },
+    {
+      "path": "installer-source/assets/EotU-Steam-Logo.png",
+      "length": 172459,
+      "sha256": "ad5d7e8993476b29aa50d3348810abf407e17f6e3f135303aa6e3e5b09021462"
+    },
+    {
+      "path": "installer-source/assets/NexusMods-Icon.png",
+      "length": 12663,
+      "sha256": "c03d6fd060e08be9855ac8a68f105feb41344d0370d40c28d6ba7e6db1cb21be"
+    },
+    {
+      "path": "installer-source/ui/AnimatedButton.cs",
+      "length": 4628,
+      "sha256": "367393d8996c8ace481f1191e36dff316a204ce44bc7ffa908e021dc78bf9a8d"
+    },
+    {
+      "path": "installer-source/ui/BackendClient.cs",
+      "length": 9321,
+      "sha256": "18c9122e78f1e14c1aab73862e2d9e6e83aebb49e9806ccb91ef124d49a08bf2"
+    },
+    {
+      "path": "installer-source/ui/LogWindow.cs",
+      "length": 4304,
+      "sha256": "73477b1d8740beb68d4e3fdba9bbd1c55caca678fe7aa6e8a3b05601b19992a1"
+    },
+    {
+      "path": "installer-source/ui/MainWindow.cs",
+      "length": 19396,
+      "sha256": "51a63d93ed01300a53e7d7105abeaf493e434c8a77dddc3a00040cf16e6b4bf2"
+    },
+    {
+      "path": "installer-source/ui/Program.cs",
+      "length": 3158,
+      "sha256": "079946326c6cf269b847c06fd8711de8794e71fc7823a0f0e945b4fbfd1a9f8c"
+    },
+    {
+      "path": "installer-source/ui/SteamLocator.cs",
+      "length": 3122,
+      "sha256": "ffa4ecd293ed81c782569b99fb11f7ef6624e979dfc8665634f72ebce8248bbc"
+    },
+    {
+      "path": "installer-source/uninstall/AutoPrepare.cs",
+      "length": 52196,
+      "sha256": "04ee7df4fb798e95f51b49048c97e0244915aea2660ae79c7f29d3d48b359b9f"
+    },
+    {
+      "path": "installer-source/uninstall/SavePatcher.cs",
+      "length": 27374,
+      "sha256": "bbedf09cbcbc4723295397f06c7c160463c8023d033ac915ca37d12fdae7c2d0"
+    },
+    {
+      "path": "manager-source/Backend.ps1",
+      "length": 21454,
+      "sha256": "b13f3e93774bc33a8e8b556d20e782dbec3db49cdbc351bd247d43675a99e2f0"
+    },
+    {
+      "path": "manager-source/health-reference.json",
+      "length": 53929,
+      "sha256": "4ac47d356007430932d0f7760d47842b87f8b180552d185de53ab300e0968ebb"
+    },
+    {
+      "path": "manager-source/Manage-Mod.ps1",
+      "length": 26109,
+      "sha256": "c608e1bbd5531ab1eef086d187c844e38c3f94d698ae4d7546d03ecb5881b83c"
+    },
+    {
+      "path": "manager-source/manifest.json",
+      "length": 11483,
+      "sha256": "e2f005e4cbf3544a772accf8631cc3c5e1c6f878a5a708171686b2ebb1013f24"
+    },
+    {
+      "path": "manager-source/ManualManager.ps1",
+      "length": 2076,
+      "sha256": "aca8cf02d0e5f33d53b9869991430cd71dec78e8d6ae381784d07209a6a44ab2"
+    },
+    {
+      "path": "manager-source/Update-Mod.ps1",
+      "length": 24296,
+      "sha256": "8af85e97ae174ac0c9a2300d3af010d0392ebacaf316647c20aaffb4502adae9"
+    },
+    {
+      "path": "manager-source/update.json",
+      "length": 253954,
+      "sha256": "634f7dfb668bb6cd718d581fba324e48711bacfb47f6e54b4f01058f358dbbeb"
+    },
+    {
+      "path": "mod-source/core.lua",
+      "length": 23753,
+      "sha256": "05b474dfd18ba16d6d64aa1b831db1d3eb8a08081f5e200b2ad58e73248ff372"
+    },
+    {
+      "path": "mod-source/extra.lua",
+      "length": 11513,
+      "sha256": "7765c3afdfc11529fe2cfd46eeb1bac0f5edc78937e58ec58cc0f9b85d43bb58"
+    },
+    {
+      "path": "mod-source/foreign_ui.lua",
+      "length": 21624,
+      "sha256": "0bbeaf2df646e7b53d286a8b0851e16e959f40b89cb0cb4530a3a17a5f2bf1d5"
+    },
+    {
+      "path": "mod-source/groups.lua",
+      "length": 17226,
+      "sha256": "1234a33e3382b8e5c67057ae3657652b2dbfb1d6fca98f9a2651c20992eb6b3d"
+    },
+    {
+      "path": "mod-source/main.lua",
+      "length": 72996,
+      "sha256": "a5c3996f49c1294626fb04d2dafd52bb28df16b1ddb87c3727462d86c51f6c35"
+    },
+    {
+      "path": "mod-source/native.lua",
+      "length": 16727,
+      "sha256": "c4e63834c313d324e5670f97ba1e44113e39e26e0c946e1fa5854039a123b3d8"
+    },
+    {
+      "path": "mod-source/roster.lua",
+      "length": 27670,
+      "sha256": "b0e5950ce2e5efb58685f5a9bdd1a71210670a83ccf119c6bfde3464ebae19e2"
+    },
+    {
+      "path": "mod-source/roster_catalog.lua",
+      "length": 9354,
+      "sha256": "f892325e554bfb083d428bfee783b6e044796810627e298a049c2e5da05c3c30"
+    },
+    {
+      "path": "mod-source/roster_challenge.lua",
+      "length": 14227,
+      "sha256": "6871f8a4bd1bd63363eab0aa24fc167c4add82e10ede6b70f80d95151caea962"
+    },
+    {
+      "path": "mod-source/roster_home.lua",
+      "length": 12161,
+      "sha256": "9fc3aaf00ac6e8b0c641a35db16be4e9736157fefd7749156483ec8d3395e55d"
+    },
+    {
+      "path": "mod-source/roster_runtime.lua",
+      "length": 27638,
+      "sha256": "4e380cb835ddc1b027df5805003bf46a6c2cc91ea846f51e17e972b7e1342f71"
+    },
+    {
+      "path": "mod-source/roster_state.lua",
+      "length": 15926,
+      "sha256": "0b1d54bf4103a30191844d19c72597bd0034326cb184ca807896892e8992688d"
+    },
+    {
+      "path": "mod-source/roster_ui.lua",
+      "length": 36092,
+      "sha256": "ffc4f9460ac22f6288ef4119a93effda8ee523e51f3f85449e493f3449abec64"
+    },
+    {
+      "path": "mod-source/sha256.lua",
+      "length": 2241,
+      "sha256": "ce72e83852f8b721a213561f2ad14ce0b3cba4cf2d2847d1672c4d9578f77b91"
+    },
+    {
+      "path": "mod-source/skills.lua",
+      "length": 9672,
+      "sha256": "b133c938f1d6076e78537a9618b8973f797b9083e1e1d66a4dcb719e39993749"
+    },
+    {
+      "path": "mod-source/skills_purchase.lua",
+      "length": 16454,
+      "sha256": "efa7043f2a945d1b8605cdd9c7396e62309025a4d6c4b34a51de3b5f4d50c0f2"
+    },
+    {
+      "path": "mod-source/skills_runtime.lua",
+      "length": 27529,
+      "sha256": "1149eea2f31a393d33e4ced74c81b174f0608391b283083c23f63c09716cfb2e"
+    },
+    {
+      "path": "mod-source/skills_state.lua",
+      "length": 6268,
+      "sha256": "e2d98e36baa742c2ac5693605fb17cdd7d515f1290c6715474affb253212ba0d"
+    },
+    {
+      "path": "mod-source/skills_ui.lua",
+      "length": 32708,
+      "sha256": "1640964fdad3229232c7082d322063cc919e0d81c6df760d6c09cb53c6edec31"
+    },
+    {
+      "path": "mod-source/slaver_balance.lua",
+      "length": 13642,
+      "sha256": "d8c0494c94da4afbaa96ea899cff873876d2bb8532a28bbaa5c1820619e5be99"
+    },
+    {
+      "path": "mod-source/slaver_controls_ui.lua",
+      "length": 22822,
+      "sha256": "33c80b435778783da9067d6de61c83b9a936dd7efdb8e0deb044dd5c660fd69c"
+    },
+    {
+      "path": "mod-source/slaver_conversion.lua",
+      "length": 35950,
+      "sha256": "0c2655f146120311aa654e550c9ff80e0ebefb8c14fb8d3c01420f939b89cf7f"
+    },
+    {
+      "path": "mod-source/slaver_conversion_animation.lua",
+      "length": 28873,
+      "sha256": "185624337e4a681a823828ef57106782c3e415006106891f5b28952c50cbdc44"
+    },
+    {
+      "path": "mod-source/slaver_damage_guard.lua",
+      "length": 5868,
+      "sha256": "9b2bc5260f31b5710da2c0a9aaf741313a66c41125e4b46d258be4629e00da2c"
+    },
+    {
+      "path": "mod-source/slaver_food.lua",
+      "length": 22564,
+      "sha256": "b2711a630a492bb045d1531014cbe749d11a37a397ad7127fdd3c0ead7a7405b"
+    },
+    {
+      "path": "mod-source/slaver_medical.lua",
+      "length": 12998,
+      "sha256": "ca178772e66b27bfba0cedb18dd05a737b30c3f01b9ccebb825f7d45a6649b8e"
+    },
+    {
+      "path": "mod-source/slaver_native.lua",
+      "length": 53530,
+      "sha256": "4d041dca9aaf8dda3098f34112fb01bed377b0eefda6a8da350e26b56ee084b5"
+    },
+    {
+      "path": "mod-source/slaver_objectives.lua",
+      "length": 7996,
+      "sha256": "3910b7e690741cdc77d4cbe1d9214ec72557b20b0a36e39dfc47f5c0869d00f1"
+    },
+    {
+      "path": "mod-source/slaver_runtime.lua",
+      "length": 36504,
+      "sha256": "c436b268e08c8896dbcd47f16531be15a63f602e3033043a49181f710fc28dea"
+    },
+    {
+      "path": "mod-source/ui.lua",
+      "length": 67701,
+      "sha256": "ff0d0c3e11ff19dd3b13dd2692447b0e6e34d38114cbfefb403e884d15722ee8"
+    },
+    {
+      "path": "mod-source/unicode_fs.lua",
+      "length": 3072,
+      "sha256": "bc7779b42d0e204af34cc067790e05cfbbc938b42ff5ac635e85c46ba9c7b2e3"
+    },
+    {
+      "path": "PLAYER-README.txt",
+      "length": 7201,
+      "sha256": "441e793fdb672b671b4c6109883fda85e8a53e369a2a19aac39d0765fb4aa47f"
+    },
+    {
+      "path": "ThirdPartyNotices.txt",
+      "length": 1670,
+      "sha256": "81b62cdb9fb0ed9dd00131926f78d0825167d2808e6a3623e5acee7a8ad03cd5"
+    },
+    {
+      "path": "UE4SS-LICENSE.txt",
+      "length": 1085,
+      "sha256": "99e1d8f8b7cb68e8b2313380ae3b0c8115e39dfbc443fcf21fd67ab74ce1d57e"
+    },
+    {
+      "path": "玩家使用说明.txt",
+      "length": 6202,
+      "sha256": "506ae90418fd6ec856fbbdeab7c8d2836a54ca9d558b6315b132c32126e33993"
+    }
+  ],
+  "binaryIdenticalReproductionClaimed": false,
+  "containsCompiledBinaries": false,
+  "containsNestedArchives": false
+}
